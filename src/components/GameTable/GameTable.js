@@ -2,7 +2,7 @@ import GameItem from './GameItem.js'
 
 function GameTable({ map, bomb }) {
   return (
-    <table className="main-frame">
+    <table className="table">
       <tbody>
         {
           map.map(row => {
@@ -12,7 +12,7 @@ function GameTable({ map, bomb }) {
                   row.map(colum => {
                     if(bomb.indexOf(colum) > -1){
                       console.log(colum, bomb);
-                      return <GameItem text={"b"} />
+                      return <GameItem text={"B"} />
                     } else{
                       return <GameItem text={colum} />
                     }

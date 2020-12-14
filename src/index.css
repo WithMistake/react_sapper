@@ -37,13 +37,77 @@ ul{
   margin: 100px auto;
 }
 .app__title{
-  text-shadow: 2px 2px #558ABB;
+  text-shadow: 2px 2px #cccccc;
   margin-bottom: 20px;
 }
 
 td {
   width: 32px;
   height: 32px;
-  background: #eee;
+  background: #ddd;
   text-align: center;
+}
+
+.main-frame{
+  width: 308px;
+}
+
+.controll{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background: #eee;
+  border: 2px solid #000;
+}
+
+.controll__countbomb,
+.controll__score{
+  background: #000;
+  letter-spacing: 3px;
+  color: #ca1b1b;
+  padding: 2px 5px 2px 6px;
+  font-size: 18px;
+}
+
+.controll__restart{
+  cursor: pointer;
+  background: #999;
+}
+
+.item{
+  position: relative;
+}
+.item-1{
+  color: #1515bd;
+}
+.item-2{
+  color: green;
+}
+.item-3{
+  color: red;
+}
+.item-4{
+  color: #5915de;
+}
+
+.item__span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  box-shadow: inset 2px -2px 3px #999;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.item__span:hover{
+  background: #ccc;
+}
+.item__span--click{
+  display: none;
+}
+.item__span--bomb,
+.item__span--bomb:hover{
+  background: #222;
 }
