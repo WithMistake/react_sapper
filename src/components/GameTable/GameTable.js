@@ -1,27 +1,10 @@
-import GameItem from './GameItem.js'
+import GameRow from './GameRow.js'
 
-function GameTable({ map, bomb }) {
+function GameTable({ map }) {
   return (
     <table className="table">
       <tbody>
-        {
-          map.map(row => {
-            return (
-              <tr>
-                { 
-                  row.map(colum => {
-                    if(bomb.indexOf(colum) > -1){
-                      console.log(colum, bomb);
-                      return <GameItem text={"B"} />
-                    } else{
-                      return <GameItem text={colum} />
-                    }
-                  })
-                }
-              </tr>
-            )
-          })
-        } 
+        { map.map( (row,j) => <GameRow row={row} j={j}  /> )} 
       </tbody>
     </table>
   )

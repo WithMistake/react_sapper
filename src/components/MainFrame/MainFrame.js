@@ -1,7 +1,9 @@
 import React from 'react'
+
+import Context from '../../context'
+
 import GameTable from '../GameTable/GameTable'
 import ControlPanel from '../ControlPanel/ControlPanel'
-
 import createGameTable from '../../service/MapTableService'
 
 function MainFrame() {
@@ -9,10 +11,12 @@ function MainFrame() {
   console.log(mapTable.bombPosition, mapTable.gameTable);
 
   return (
-    <div className="main-frame">
-      <ControlPanel />
-      <GameTable map={mapTable.gameTable} bomb={mapTable.bombPosition} />
-    </div>
+    <Context.Provider value={{bomb:mapTable.bombPosition}}>
+      <div className="main-frame">
+        <ControlPanel />
+        <GameTable map={mapTable.gameTable} />
+      </div>
+    </Context.Provider>
   )
 }
 
