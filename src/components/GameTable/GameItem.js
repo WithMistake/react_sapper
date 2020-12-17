@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import Context from '../../context'
 
 import flag from '../../static/flag.png'
 
 function GameItem({ text, row, column }) {
+  let { userTable, bomb } = useContext(Context);
   let [state, setState] = useState({
-    spanState: 'empty'
+    spanState: userTable[row][column] ? 'click' : 'empty'
   })
   let classNumber = 'item item-'+text;
 

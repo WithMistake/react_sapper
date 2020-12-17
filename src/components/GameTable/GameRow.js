@@ -14,7 +14,8 @@ function GameRow({ row, j }) {
           return <GameItem 
                   text={ bomb.indexOf(column) > -1 ? 'B' : column}  
                   row={j} 
-                  column={i} />    
+                  column={i}
+                  key={i} />    
         })
       }
     </tr>

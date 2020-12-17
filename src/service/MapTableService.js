@@ -35,9 +35,13 @@ function updatePosition(array,j,i){
   })
 }
 
-function createMapTable(countRow,bombPosition){
-  const gameTable = [...new Array(countRow)]
+function createMatrix(countRow){
+  return [...new Array(countRow)]
           .map(() => [...new Array(countRow)])
+}
+
+function createMapTable(countRow,bombPosition){
+  const gameTable = createMatrix(countRow);
 
   gameTable.forEach((row, j) => {
     row.forEach((col, i)=> {
@@ -55,10 +59,12 @@ function createMapTable(countRow,bombPosition){
 
 
 function createGameTable(countRow, countBomb) {
+  const userTable = createMatrix(countRow);
   const bombPosition = randomBombPosition(countBomb,countRow);
   const gameTable = createMapTable(countRow, bombPosition);
 
   return {
+    userTable,
     bombPosition,
     gameTable,
   }
